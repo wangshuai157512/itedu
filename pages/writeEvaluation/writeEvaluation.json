@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "用户评价",
+  "onReachBottom" : true,
+  "usingComponents": {
+    "freeClass": "../../components/freeClass/freeClass"
+  }
+}

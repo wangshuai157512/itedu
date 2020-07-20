@@ -1,0 +1,130 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.9.3",
+	"appid": "wxcc881bfe7cf28123",
+	"projectname": "IT%E6%95%99%E8%82%B2",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/indexDetail/indexDetail",
+					"pathName": "pages/indexDetail/indexDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/indexDetail/indexDetail",
+					"pathName": "pages/indexDetail/indexDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/indexDetail/indexDetail",
+					"pathName": "pages/indexDetail/indexDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/userEvaluation/userEvaluation",
+					"pathName": "pages/userEvaluation/userEvaluation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/indexDetail/indexDetail",
+					"pathName": "pages/indexDetail/indexDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/writeEvaluation/writeEvaluation",
+					"pathName": "pages/writeEvaluation/writeEvaluation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/writeEvaluation/writeEvaluation",
+					"pathName": "pages/writeEvaluation/writeEvaluation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/indexDetail/indexDetail",
+					"pathName": "pages/indexDetail/indexDetail",
+					"query": "couseid=1",
+					"scene": 1007
+				},
+				{
+					"id": -1,
+					"name": "pages/indexDetail/indexDetail",
+					"pathName": "pages/indexDetail/indexDetail",
+					"query": "couseid=1",
+					"scene": 1007
+				}
+			]
+		}
+	}
+}

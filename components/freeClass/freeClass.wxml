@@ -1,0 +1,11 @@
+
+  <view class="freeClass_show" bindtap="handleFree">
+    <view class="freeClass_left"><image src="{{img}}" mode="widthFix"></image></view>
+    <view class="freeClass_right">
+    <view>{{title}}</view>
+    <view class="explain">{{description}}</view>
+    <view class="watchPeople">{{num}}人已观看</view>
+  </view>
+</view>
+
+

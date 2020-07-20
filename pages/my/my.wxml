@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class='header' style="height:{{navBarHeight+'px'}}">
+  <view class="header_font">
+    奇迹IT
+  </view>
+</view> 
+<view style="height:{{navBarHeight+'px'}}">
+</view>
+<view class="my_head">
+  <view class="my_head_bg">
+    <image src="../../public/images/my_user_bg.png">
+    </image>
+  </view>
+  <view class="user">
+    <view class="user_img" >
+      <image src="{{userInfo.avatarUrl}}" wx:if="{{userInfo.nickname}}">
+      </image>
+      <image src="../../public/images/my_user.png" wx:else>
+      </image>
+    </view>
+    <view class="user_name">
+      <view class="" wx:if="{{userInfo.nickname}}">{{userInfo.nickname}}</view>
+      <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button>
+      <view class="user_phone" wx:if="{{userInfo.phone}}">{{userInfo.phone}}</view>
+    </view>
+  </view>
+  <view class="study_time">
+    <view class="study_time_top" >
+      <view>{{userInfo.learningDays}}</view>
+      <view>{{learningDuration}}</view>
+      <view>{{myCourseList.length}}</view>
+    </view>
+    <view class="study_time_bottom">
+      <view>累计学习(天)</view>
+      <view>学习时长(分钟)</view>
+      <view>学习课程(节)</view>
+    </view>
+  </view>
+</view>
+<view class="content_list">
+  <view class="freeClass">
+    我的课程
+    <view class="rectangle"></view>
+  </view>
+  <view class="content" wx:for="{{myCourseList}}" wx:key="index" wx:if="{{myCourseList.length > 0}}" data-couseid="{{item.id}}" bindtap="handleFree">
+    <freeClass 
+      title="{{item.title}}"
+      description="{{item.description}}"
+      num="{{item.look_num}}"
+      img="{{normalUrl}}{{item.imgUrl}}">
+    </freeClass>
+</view>
+</view>
+
+
+
+
+

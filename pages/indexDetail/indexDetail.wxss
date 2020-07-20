@@ -1,0 +1,427 @@
+
+.coupon-box{
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+}
+.over {
+  /* overflow: hidden; */
+  border-left: 1px solid #E0E6EE;
+}
+.indexDetail {
+  width: 750rpx;
+  background-color: #F5F5F5;
+}
+.number_top {
+  width: 100%;
+  position: relative;
+}
+.phone_number {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.phone_number button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  opacity:0;z-index: 99;
+}
+.indexDetail .head {
+  width: 750rpx;
+  height: 420rpx;
+}
+.indexDetail .head image {
+  width: 100%;
+  height: 100%;
+}
+.my_video {
+  width: 100%;
+  display: block;
+}
+.my_video image{
+  width: 100%;
+  height: 100%;
+}
+.teacher {
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size:38rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:700;
+  color:rgba(46,48,51,1);
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.teacher_img {
+  width: 64rpx;
+  height: 64rpx;
+  /* line-height: 64rpx; */
+  margin-top: 30rpx;
+  display: inline-block;
+}
+.teacher_img image {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+.teacher_name {
+  display: inline-block;
+  font-size:30rpx;
+  font-weight: normal;
+  color:rgba(96,101,108,1);
+  margin-left: 20rpx;
+}
+.teacher_share {
+  width: 48rpx;
+  height: 48rpx;
+  padding: 11rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+.teacher_share image {
+  width: 100%;
+  height: 100%;
+}
+.course_box {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+}
+.course {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size:32rpx;
+  color:rgba(149,156,166,1);
+  position: relative;
+}
+.course .actives {
+  width:32rpx;
+height:5rpx;
+background:rgba(27,111,227,1);
+border-radius:3rpx;
+position: absolute;
+bottom: 10rpx;
+margin-left: 48rpx;
+/* left: 48rpx; */
+}
+.active {
+  font-weight:700;
+  color:#2E3033;
+}
+.courseIntroduce {
+  width: 100%;
+}
+.courseIntroduce_img {
+  width: 100%;
+  display: block;
+}
+.courseConent {
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+}
+.courseIntroduce {
+  width: 100%;
+}
+.courseIntroduce_img image {
+  width: 100%;
+}
+.courseCatalog {
+  width: 100%;
+  padding: 0rpx 30rpx 50rpx 34rpx;
+  box-sizing: border-box;
+  /* font-weight: 600; */
+}
+.courseCatalog > view{
+  position: relative;
+}
+.courseCatalog > view:nth-child(1):before{
+  content:'';
+  display: block;
+  width: 4rpx;
+  height: 50rpx;
+  background: #fff;
+  position: absolute;
+  left: -2rpx;
+  top: 0;
+}
+.courseCatalog > view:last-child:before{
+  content:'';
+  display: block;
+  width: 4rpx;
+  background: #fff;
+  position: absolute;
+  left: -2rpx;
+  top: 50rpx;
+  bottom: 0;
+}
+.courseConent image {
+  /* width: 48rpx; height: 48rpx; */
+  vertical-align: middle;
+}
+.allshare,.noshare {
+  width: 100%;
+  font-size:32rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  padding: 30rpx 0;
+  color:rgba(26,43,62,1);
+  position: relative;
+}
+.activemargin {
+  padding-bottom: 0;
+}
+.line {
+  width: 1px;
+  /* height: 102rpx; */
+  background-color: #E0E6EE;
+  position: absolute;
+  top: 62rpx;
+  left: 6rpx;
+}
+.activeline {
+  display: none !important;
+}
+.allshare_first {width: 12rpx; height: 12rpx; position: relative;left: -7rpx}
+.allshare text {margin-left: 16rpx; font-weight: 700;}
+.allshare_last {width: 48rpx; height: 48rpx; position: absolute; top: 30rpx; right: 0rpx;}
+.noshare_first {width: 12rpx; height: 12rpx;}
+.noshare text {margin-left: 16rpx; font-weight: 700;}
+.noshare_last {width: 48rpx; height: 48rpx; position: absolute; top: 30rpx; right: 0rpx;}
+
+.allshare_video {
+  width: 640rpx;
+  height:120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 4px 15px 0px rgba(224,230,238,1);
+  border-radius:10rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-left: 40rpx;
+  margin-top: 30rpx;
+  font-size:26rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:700;
+  color:rgba(49,56,63,1);
+  position: relative;
+}
+.allshare_video_title {
+  width: 400rpx;
+  /* width: 100%; */
+}
+.allshare_video_time {
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(149,156,166,1);
+  width: 80rpx;
+  margin: 0 26rpx;
+}
+.allshare_video image {
+  width: 64rpx;
+  height: 64rpx;
+  vertical-align: bottom;
+  /* position: absolute;
+  right: 20rpx;
+  top: 30rpx; */
+}
+.courseConent .active {
+  border:1px solid rgba(27,111,227,1);
+}
+.courseConent .actives {
+  width:9rpx;
+  height:120rpx;
+  background:rgba(27,111,227,1);
+  border-radius:10rpx 0px 0px 10rpx;
+  position: absolute;
+  left: 0;
+  top: -2rpx;
+}
+
+/* 评价 */
+.evaluation_head {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  height: 36rpx;
+  line-height: 36rpx;
+  margin: 32rpx 0;
+  /* height: 100rpx;
+  line-height: 100rpx; */
+  font-size:36rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:700;
+  color:rgba(46,48,51,1);
+  position: relative;
+}
+.evaluation_head view {
+  /* width: 50%; */
+  /* height: 36rpx;
+  line-height: 36rpx;
+  padding: 32rpx 0; */
+}
+.evaluation_head_more {
+  width: 100rpx;
+  /* height: 36rpx!important;
+  line-height: 36rpx!important; */
+  font-size:26rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(149,156,166,1);
+}
+.evaluation_head_img {
+  width: 48rpx;
+  height: 48rpx;
+  position: absolute;
+  top: -7rpx;
+  right: 0;
+}
+.evaluation_head_img image {
+  width: 100%;
+  height: 100%;
+}
+.goevaluation {
+  display: flex;
+  justify-content: center;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  margin: 40rpx 0;
+}
+.goevaluation view {
+  width:186rpx;
+  height:60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius:30rpx;
+  border:1px solid rgba(27,111,227,1);
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(27,111,227,1);
+}
+.evaluation {
+  width: 750rpx;
+  padding: 40rpx 58rpx 10rpx 30rpx;
+  box-sizing: border-box;
+  /* background-color: #ccc; */
+}
+.evaluation_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size:26rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(149,156,166,1);
+}
+.evaluation_top_left image {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.evaluation_top_left text {
+  margin-left: 20rpx;
+}
+.evaluation_top_right image {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  padding-bottom: 5rpx;
+  box-sizing: border-box;
+}
+.evaluation_top_right text {
+  margin-right: 10rpx;
+}
+
+.evaluation_bottom {
+  margin-left: 84rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(46,48,51,1);
+}
+
+/* 分享 */
+.shareAlart {
+  width: 750rpx;
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+}
+.shareAlart_title {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size:32rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:700;
+  color:rgba(46,48,51,1);
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.shareAlart_img {
+  width: 48rpx;
+  height: 48rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 60rpx;
+}
+.shareAlart_img image {
+  width: 100%;
+  height: 100%;
+}
+.shareAlart_body {
+  height: 251rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(96,101,108,1);
+  text-align: center;
+  position: relative;
+}
+.shareAlart_body_img {
+  width: 88rpx;
+  height: 88rpx;
+  position: absolute;
+  left: 332rpx;
+  top: 90rpx;
+}
+.consult_btn {
+  /* width:100%;
+  height:100%; */
+  padding: 0;
+  margin: 0;
+  display: inline;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+}
+.shareAlart_body_img image {
+  width: 100%;
+  height: 100%;
+}
+.shareAlart_body_friend {
+  font-size:24rpx;
+  position: absolute;
+  left: 332rpx;
+  bottom: 30rpx;
+}

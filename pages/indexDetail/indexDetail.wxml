@@ -1,0 +1,183 @@
+<view class="indexDetail" >
+  <!-- <view class="head" wx:if="{{false}}">
+    <image src="{{normalUrl}}{{courseDetail.bannerUrl}}"></image>
+  </view> -->
+  <view class="number_top">
+    <view class="phone_number" style="height:{{videoHeight}}px" wx:if="{{!userInfo.phone}}"><button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >手机号</button></view>
+    <view>
+      <view  wx:if="{{show}}" id="myVideo"
+      style="height:{{videoHeight}}px"
+      class="my_video">
+        <image src="{{normalUrl}}{{courseDetail.bannerUrl}}"></image>
+      </view>
+      <video wx:else
+      src="{{videoUrlEver}}"
+      controls
+      object-fit="cover"
+      poster="{{normalUrl}}{{courseDetail.bannerUrl}}"
+      bindplay="bindPlay"
+      bindpause="bindPause"
+      bindended="binDenDed"
+      id="myVideo"
+      style="height:{{videoHeight}}px"
+      class="my_video">
+      </video>
+    </view> 
+  </view>
+  
+  <view class="teacher">
+    <view class="">
+      {{courseDetail.title}}
+    </view>
+    <view class="teacher_img">
+      <image src="{{normalUrl}}{{courseDetail.teacher_head_img}}" bindload="imgLoad"></image>
+      
+      <!-- <image src="{{normalUrl}}{{courseDetailImg}}">
+      </image> -->
+    </view>
+    <view class="teacher_name">
+      {{courseDetail.teacherName}}
+    </view>
+    <view class="teacher_share" bindtap="handleShare">
+      <image src="../../public/images/goshare.png">
+      </image>
+    </view>
+  </view>
+  <view class="course_box">
+    <view class="course" style="{{navStyle}}">
+      <view class="{{indexTab == index ? 'active' : ''}}" wx:for="{{courseList}}" wx:key="index" bindtap="handleActive" data-index="{{index}}">
+        {{item}}
+        <view class="{{indexTab == index ? 'actives' : ''}}"></view>
+      </view>
+    </view>
+  </view>
+  <view class="courseConent">
+    <view class="courseIntroduce" wx:if="{{indexTab == 0}}">
+      <view class="courseIntroduce_img" wx:for="{{courseDetail.contentUrl}}" wx:key="index">
+        <image src="{{normalUrl}}{{item}}" mode="widthFix"></image>
+      </view>
+        <!--评价-->
+      <view class="evaluation_head">
+        <view class="">用户评价</view>
+        <view class="evaluation_head_more" bindtap='seeEvaluation'>
+            更多
+        </view>
+        <view class="evaluation_head_img">
+            <image class="" src="../../public/images/more.png"></image>
+        </view>
+      </view>
+      <view class='evaluation' wx:for="{{inquireList}}" wx:key='index'>
+        <view class="evaluation_top">
+          <view class="evaluation_top_left">
+            <image class="" src="{{item.avatarUrl}}"></image>
+            <text class="">{{item.nickname}}</text>
+          </view>
+          <view class="evaluation_top_right">
+            <text class="">评分</text>
+            <block wx:for="{{item.star_num}}" wx:key='index'>
+              <image class="" src="../../public/images/starCheck.png"></image>
+            </block>
+            <block wx:for="{{5-item.star_num}}" wx:key='index'>
+              <image class="" src="../../public/images/star.png"></image>
+            </block>
+          </view>
+        </view>
+        <view class="evaluation_bottom">
+          {{item.description}}
+        </view>
+      </view>
+      <view class="goevaluation">
+        <view class="" bindtap='goEvaluation'>
+          去评价
+        </view>
+      </view>
+    </view>
+    <view class="courseCatalog" wx:if="{{indexTab == 1}}">
+        <view class="over" wx:for="{{chapterList}}" wx:key='index' wx:for-item="itemName"  wx:for-index="indexName" >
+          <block>
+            <view class="allshare {{indexName == videoIndex? 'activemargin' : ''}}" bindtap="videoTitle" data-index="{{indexName}}">
+              <image class="allshare_first" src="../../public/images/allsharecircle.png"></image>
+              <image class="allshare_first" src="../../public/images/nosharecircle.png" wx:if="{{false}}"></image>
+              <text class="">{{itemName.name}}</text>
+              <image class="allshare_last" src="../../public/images/share.png" wx:if="{{itemName.isShare > 0}}"></image>
+              <image class="allshare_last" src="../../public/images/noshare.png" wx:else></image>
+              <!-- <view class="line {{indexName == 5? 'activeline' : ''}}"  style="height:{{indexName==0?heightBox: '51'}}px" wx:if="false">
+                
+              </view> -->
+            </view>
+            <block  wx:if="{{indexName == videoIndex}}">
+            <view class="allshare_video {{index == videoTab? 'active' : ''}}" wx:for="{{chapterList[videoIndex].childChapter}}" wx:key="index" data-index="{{index}}" data-share="{{itemName.isShare}}" data-id="{{itemName.id}}" data-videoUrlEver="{{item.videoUrl}}" bindtap="videoTab">
+                <view class="allshare_video_title">{{item.name}}</view>
+                <view wx:if="{{!show}}" class="allshare_video_time">{{item.time}}</view>
+                <image wx:if="{{!show}}" class="" src="../../public/images/video.png"></image>
+                <view class="{{index == videoTab? 'actives' : ''}}">
+                </view>
+            </view>
+            </block>
+          </block>
+        </view>
+      <!--<view wx:if="{{true}}">-->
+        
+          <!-- <view wx:for="{{chapterList}}" wx:key='{{index}}'>
+            <view wx:if="{{index >= 1 }}"  class="boxOne">
+                <view class="allshare" bindtap="videoTitle" data-index="{{index}}" >
+                  <image class="allshare_first" src="../../public/images/allsharecircle.png"></image>
+                  <image class="allshare_first" src="../../public/images/nosharecircle.png" wx:if="{{false}}"></image>
+                  <text class="">{{item.name}}</text>
+                  <image class="allshare_last" src="../../public/images/share.png" wx:if="{{item.isShare > 0}}"></image>
+                  <image class="allshare_last" src="../../public/images/noshare.png" wx:else></image>
+                  <view class="line {{index == chapterList.length-1? 'activeline' : ''}}" style="height:{{heightBoxOne}}px">
+                
+                  </view>
+                </view>
+              <block  wx:if="{{index == videoIndex}}">
+              <view class="allshare_video {{index == videoTab? 'active' : ''}}" wx:for="{{chapterList[videoIndex].childChapter}}" wx:key="{{index}}" data-index="{{index}}" data-videoUrlEver="{{item.videoUrl}}" bindtap="videoTab">
+                  <view class="allshare_video_title">{{item.time}}</view>
+                  <view class="allshare_video_time">{{item.time}}</view>
+                  <image class="" src="../../public/images/video.png"></image>
+                  <view class="{{index == videoTab? 'actives' : ''}}">
+                  </view>
+              </view>
+              </block>
+            </view> -->
+          
+          <!-- <view wx:if="{{item.isShare == 0  && index >= 1 }}">
+            <view class="allshare"  bindtap="videoTitle" data-index="{{index}}">
+              <image class="allshare_first" src="../../public/images/allsharecircle.png" wx:if="{{false}}"></image>
+              <image class="allshare_first" src="../../public/images/nosharecircle.png" ></image>
+              <text class="">{{item.name}}</text>
+              <image class="allshare_last" src="../../public/images/share.png" wx:if="{{false}}" ></image>
+              <image class="allshare_last" src="../../public/images/noshare.png" ></image>
+              <view class="line {{index == chapterList.length-1? 'activeline' : ''}}" style="height:{{28}}px">
+              </view>
+            </view>
+          </view> -->
+          
+        <!-- </view> -->
+        
+      <!--</view>-->
+      
+      
+    </view>
+  </view>
+    <!--分享-->
+  <view class="coupon-box" wx:if="{{shareAlart}}">
+    <view class="shareAlart">
+      <view class="shareAlart_title">
+        分享课程
+        <view class="shareAlart_img" bindtap="handleWrong">
+        <image src="../../public/images/wrong.png"></image>
+        </view>
+      </view>
+      <view class="shareAlart_body">
+        <view class="">分享课程给好友，即可解锁观看</view>
+        <view class="shareAlart_body_img">
+          <button class="consult_btn" open-type="share">
+            <image src="../../public/images/wxfirend.png"></image>
+          </button> 
+        </view>
+        <view class="shareAlart_body_friend">微信好友</view>
+      </view>
+    </view>
+  </view>
+</view>

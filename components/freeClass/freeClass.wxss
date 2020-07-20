@@ -1,0 +1,53 @@
+
+.content_list {
+    width: 690rpx;
+    margin-left: 30rpx;
+    margin-top: 108rpx;
+    font-size: 36rpx;
+    font-weight:700;
+    color:rgba(0,0,0,1)
+  }
+  .freeClass {
+    font-family:PingFangSC-Medium,PingFang SC;
+    padding-bottom: 4rpx;
+  }
+  .freeClass_show {
+    display: flex;
+    margin-top: 28rpx;
+  }
+  .freeClass_show .freeClass_left {
+    width:146rpx;
+    height:146rpx;
+    /* opacity:0.4; */
+  }
+  .freeClass_show .freeClass_left image{
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx;
+  }
+  .freeClass_show .freeClass_right {
+    position: relative;
+    top: -8rpx;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+    flex: 1;
+  }
+  .explain {
+    font-size:24rpx;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:rgba(96,101,108,1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .watchPeople {
+    font-size:22rpx;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:rgba(184,192,204,1);
+    position: absolute;
+    bottom: -12rpx;
+  }

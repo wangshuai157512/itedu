@@ -1,0 +1,20 @@
+
+<view class="shareAlart">
+  <view class="shareAlart_title">
+    分享课程
+    <view class="shareAlart_img" bindtap="handleWrong">
+    <image src="../../public/images/wrong.png"></image>
+    </view>
+  </view>
+  <view class="shareAlart_body">
+    <view class="">分享课程给好友，即可解锁观看</view>
+    <view class="shareAlart_body_img">
+      <button class="consult_btn" open-type="share">
+        <image src="../../public/images/wxfirend.png"></image>
+      </button> 
+    </view>
+    <view class="shareAlart_body_friend">微信好友</view>
+  </view>
+</view>
+
+

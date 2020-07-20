@@ -1,0 +1,63 @@
+.evaluation {
+  width: 750rpx;
+  padding: 40rpx 58rpx 10rpx 30rpx;
+  box-sizing: border-box;
+  /* background-color: #ccc; */
+}
+.evaluation_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size:26rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(149,156,166,1);
+}
+.evaluation_top_left image {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.evaluation_top_left text {
+  margin-left: 20rpx;
+}
+.evaluation_top_right image {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.evaluation_top_right text {
+  margin-right: 10rpx;
+}
+
+.evaluation_bottom {
+  margin-left: 84rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(46,48,51,1);
+}
+.load_more {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.load_more text {
+  font-size: 12px;
+  color: #9DA69D;
+  line-height: 40px;
+}
+.pull {
+  width: 9px;
+  height: 4px;
+  margin-left: 4px;
+}
+.pull_loading {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}

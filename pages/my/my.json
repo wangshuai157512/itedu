@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "IT教育实训",
+  "onReachBottom" : true,
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "freeClass": "../../components/freeClass/freeClass"
+  }
+}

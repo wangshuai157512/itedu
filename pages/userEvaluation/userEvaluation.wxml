@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class='evaluation' wx:for="{{inquireList}}" wx:key='index'>
+  <view class="evaluation_top">
+    <view class="evaluation_top_left">
+      <image class="" src="{{item.avatarUrl}}"></image>
+      <text class="">{{item.nickname}}</text>
+    </view>
+    <view class="evaluation_top_right">
+      <text class="">评分</text>
+      <block wx:for="{{item.star_num}}" wx:key='index'>
+        <image class="" src="../../public/images/starCheck.png"></image>
+      </block>
+      <block wx:for="{{5-item.star_num}}" wx:key='index'>
+        <image class="" src="../../public/images/star.png"></image>
+      </block>
+    </view>
+  </view>
+  <view class="evaluation_bottom">
+    {{item.description}}
+  </view>
+</view>
+<view wx:if="{{hasMore === 0}}" bindtap="loadMore" class="load_more">
+  <text >加载更多</text>
+  <image src="../../public/images/pull.jpg" class="pull"></image>
+</view>
+<view wx:elif="{{hasMore ===1}}" class="load_more">
+  <image src="../../public/images/loading.gif" class="pull_loading"></image>
+  <text>正在加载中...</text>
+</view>
+<view wx:else class="load_more">
+  <text>没有更多数据了~</text>
+</view>
+
+
+
+
+

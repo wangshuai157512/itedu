@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class='mark'>
+  <view class='mark_title'>
+    <view class='mark_title_one'>
+      整体评分
+    </view>
+    <view class='mark_title_img'>
+      <block wx:for="{{0}}" wx:key='index'>
+        <image class="" src=""></image>
+      </block>
+      <block wx:for="{{stars}}" wx:key='index'>
+        <image class="" src="{{item.flag==1?item.lightImg:item.blackImg}}" bindtap="star" data-index="{{index}}"></image>
+      </block>
+    </view>
+    <view class='mark_title_good' wx:if="{{starNum > 3}}">
+      很好
+    </view>
+  </view>
+  <form bindsubmit="bindFormSubmit" class="mark_form">
+    <view>
+      <textarea bindinput="impedance" placeholder="说说课程的优点或者美中不足吧" name="textarea"/>
+    </view>
+    <button form-type="submit" class="btn {{submitState? 'active' : ''}}" disabled="{{!submitState}}"> 提交 </button>
+  </form>
+</view>
+
+
+
+
+
+

@@ -1,0 +1,112 @@
+<!--index.wxml-->
+<view class="headerBox">
+  <view style="height:{{navBarHeight+'px'}}">
+    <view class='header' style="height:{{navBarHeight+'px'}}">
+      <view class="header_font">
+        奇迹IT
+      </view>
+    </view>
+    <view class="title_f" style="white-space: nowrap; top:{{navBarHeight+'px'}}">
+      <view class="title" style="white-space: nowrap;">
+          <scroll-view scroll-x='true' style="white-space: nowrap;height:100%;">
+            <view class='title_list'>
+              <view class="title_list_ever {{idx == recommendIndex? 'active' : ''}}" wx:for="{{recommendList}}" wx:key='idx' wx:for-index="idx" data-index='{{idx}}' data-catid='{{item.catid}}' bindtap="getCourseList">{{item.catname}}</view>
+            </view>
+          </scroll-view>
+      </view>
+    </view>
+  </view>
+  <!-- <view style="height:{{navBarHeight+'px'}}">
+  </view> -->
+  <view style="height:{{80+'rpx'}}">
+  </view>
+</view>
+<view class="index_head" wx:if="{{recommendIndex == 0}}">
+    <image src="../../public/images/index_head.png"></image>
+</view>
+<view wx:if="{{recommendIndex == 0}}">
+  <view class="collection-box" style="top:{{navBarHeight+'px'}}" wx:if="{{cancel}}">
+    <view class="sanjiao"></view>
+    <text class="collection-text">添加到我的小程序，随时听课</text>
+    <image src="../../public/images/close2.png" bindtap="handleCancel"></image>
+  </view>
+  <view class="hand_all">
+  <view class="index_swiper">
+    <swiper class="{{currentSwiper==0? 'bannerOrange':''}} {{currentSwiper==1? 'bannerBlue':''}} {{currentSwiper==2? 'bannerSky':''}}" circular='true' current="{{currentSwiper}}" bindchange="swiperChange" >
+      <block wx:for="{{banner_list}}" wx:key='index'>
+        <swiper-item  class="bannerList">
+            <image src="{{normalUrl}}{{item.imgUrl}}" mode="widthFix" bindtap="linkTo"  data-id='{{item.courseId}}'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view wx:if="{{!userInfo.nickname}}" class="index_swiper_btn">
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+    </view>
+    <view class="dots" wx:if = "{{banner_list.length > 1}}">
+      <block wx:for="{{banner_list}}" wx:key="index">
+        <view class="dot {{index == currentSwiper  ? 'active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class="freeClass">
+    免费课程
+    <view class="rectangle"></view>
+  </view>
+  <view class="freeClass_show" bindtap="handleFree" data-couseid='{{item.id}}' wx:for="{{courseList}}" wx:key="index" wx:if="{{item.type==1}}">
+    <view wx:if="{{!userInfo.nickname}}" class="freeClass_show_btn">
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+    </view>
+    <view class="freeClass_left"><image src="{{normalUrl}}{{item.imgUrl}}" mode="widthFix"></image></view>
+    <view class="freeClass_right">
+      <view>{{item.title}}</view>
+      <view class="explain">{{item.description}}</view>
+      <view class="watchPeople">{{item.look_num}}人已观看</view>
+    </view>
+  </view>
+</view>
+<view class="excellent_content">
+    <view class="excellentClass">
+        精品课程 
+        <view class="rectangle"></view>
+    </view>
+    <view class="excellentClass_show" wx:for="{{courseList}}" wx:key="index" bindtap="handleFree" data-couseid='{{item.id}}' wx:if="{{item.type==2}}">
+      <view class="excellentClass_left" >
+        <view class="excellentClass_left_img"> 
+          <image src="{{normalUrl}}{{item.bannerUrl}}" mode="widthFix"></image>
+        </view>
+        <view class="excellentClass_show_explain">
+          <view class="excellentClass_show_explain_title">
+            {{item.title}}
+          </view>
+          <view class="watchPeople">{{item.look_num}}人已观看</view>
+        </view>
+      </view>
+      <view wx:if="{{!userInfo.nickname}}" class="excellentClass_show_btn">
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:for="{{recommendList}}" wx:key='idx' wx:for-index="idx">
+  <view class="content" bindtap="handleFree" data-couseid='{{item.id}}' wx:for="{{courseList}}" wx:key="index" wx:if="{{recommendIndex== idx && recommendIndex > 0}}">
+    <view wx:if="{{!userInfo.nickname}}" class="excellentClass_show_btn">
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+    </view>
+    <freeClass 
+              title="{{item.title}}"
+              description="{{item.description}}"
+              num="{{item.look_num}}"
+              img="{{normalUrl}}{{item.imgUrl}}">
+    </freeClass>
+    
+  </view>
+</view>
+
+
+
+
+
+
+

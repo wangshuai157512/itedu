@@ -1,0 +1,6 @@
+<view class="container">
+  <!--http://pc-shop.xiaoe-tech.com-->
+  <!-- <web-view src="https://uec.chinaedu.net"></web-view> -->
+  <!-- <web-view src="https://uec.chinaedu.net/edu/wx#/itedu/courseAdd"></web-view> -->
+  <web-view src="https://uec.chinaedu.net/movie/movie-list-custom.html"></web-view>
+</view>
